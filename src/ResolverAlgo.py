@@ -1,4 +1,5 @@
 import numpy as np
+import DataSetGenerator as Dsg
 
 '''
 cost_change()
@@ -26,13 +27,23 @@ def two_opt(route, cost_mat):
 
 
 if __name__ == '__main__':
-    nodes = 3
-    init_route = list(range(nodes))
-    print(init_route)
-    cost_mat = np.random.randint(10, 100, size=(nodes, nodes))
-    cost_mat += cost_mat.T
-    np.fill_diagonal(cost_mat, 0)
-    print(cost_mat)
-    cost_mat = list(cost_mat)
-    best_route = two_opt(init_route, cost_mat)
+    # nodes = 3
+    # init_route = list(range(nodes))
+    # print(init_route)
+    # cost_mat = np.random.randint(1, 12, size=(nodes, nodes))
+    # cost_mat += cost_mat.T
+    # np.fill_diagonal(cost_mat, 0)
+    # print(cost_mat)
+    
+    # cost_mat = list(cost_mat)
+    # best_route = two_opt(init_route, cost_mat)
+    # print(best_route)
+
+    cityNumber = input("Please enter the number of cities that you want : ")
+    init_route = list(range(cityNumber))
+    matrix = Dsg.random_symmetric_matrix(cityNumber)
+
+    listeMatrix = list(matrix)
+    best_route = two_opt(init_route, matrix)
+    print(matrix)
     print(best_route)
