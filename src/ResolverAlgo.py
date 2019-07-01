@@ -27,23 +27,13 @@ def two_opt(route, cost_mat):
 
 
 if __name__ == '__main__':
-    # nodes = 3
-    # init_route = list(range(nodes))
-    # print(init_route)
-    # cost_mat = np.random.randint(1, 12, size=(nodes, nodes))
-    # cost_mat += cost_mat.T
-    # np.fill_diagonal(cost_mat, 0)
-    # print(cost_mat)
-    
-    # cost_mat = list(cost_mat)
-    # best_route = two_opt(init_route, cost_mat)
-    # print(best_route)
+    # nodes = 1000
 
     cityNumber = input("Please enter the number of cities that you want : ")
-    init_route = list(range(cityNumber))
-    matrix = Dsg.random_symmetric_matrix(cityNumber)
 
-    listeMatrix = list(matrix)
-    best_route = two_opt(init_route, matrix)
-    print(matrix)
+    init_route = list(range(cityNumber))
+    # print(init_route)
+    mat = Dsg.random_symmetric_matrix(cityNumber)
+    mat = list(mat)
+    best_route = two_opt(init_route, mat)
     print(best_route)
