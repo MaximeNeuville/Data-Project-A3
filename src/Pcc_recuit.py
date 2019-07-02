@@ -4,7 +4,7 @@ import random
 import copy
 import math
 import matplotlib.pyplot as plt
-import csv
+import ToCsv
 
 # Calculates the travel time for a given path
 def path_travel_time(path, matrix):
@@ -15,7 +15,6 @@ def path_travel_time(path, matrix):
         x = path[i]
 
     return time
-
 
 # Randomly swap 2 elements
 def swap_value(path):
@@ -52,7 +51,7 @@ def simulated_annealing(matrix):
     # total path
     selected = []
 
-    # TOPRINT
+    # best path TOPRINT
     path = []
 
     # create an initial_route
@@ -92,36 +91,18 @@ def simulated_annealing(matrix):
     plt.show()
 
     # returns a list with, path, timing, execution time, and all 
-    return [path, timing, time.clock() - clock, selected ,total_len_history]
-
-def generateCSV(datas, algoType):
-    print("hello")
-    print(datas[0])
-
-    # with open('../Datas/TestSA.csv', 'a') as f:
-    #     fieldnames = ['Nombre de ville', 'temps d''execution', 'nombre d''iterations', 'PCchemin']
-    #     writer = csv.DictWriter(f, fieldnames=fieldnames)
-    #     # writer =  csv.writer(f,  delimiter=',', quoting=csv.QUOTE_MINIMAL)
-    #     # writer.writerow(['solution', 'timing'])
-    #     # writer.writerow('timing')
-    #     # writer.writerow([datas[0], datas[1]])
-    #     print("generated and/or filled")
-
-    #     writer.writeheader()
-    #     writer.writerow({'first_name': 'Baked', 'last_name': 'Beans'})
-    #     writer.writerow({'first_name': 'Lovely', 'last_name': 'Spam'})
-    #     writer.writerow({'first_name': 'Wonderful', 'last_name': 'Spam'})
-
-    # with open('../Datas/TestSA.csv', 'a') as f:
-    #     f.write("eeeee\n")
+    return [path, timing, time.clock() - clock, selected, total_len_history, d]
 
 
+      
 if __name__ == '__main__':
 
     nb_city = input("Please enter the number of cities that you want : ")
+
+    # call the function that generates a symmetric matrix
     matrix = dsg.random_symmetric_matrix(nb_city)
     datas = simulated_annealing(matrix)
 
     # 2 means 2opt algo 1 means SA
-    generateCSV(datas, 1)   
+    ToCsv.generateCSV(datas, 1)   
 
