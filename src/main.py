@@ -1,6 +1,6 @@
 import DataSetGenerator as dsg
 import Pcc_recuit as algo1
-import pcc_recuitC1 as algo1c1
+import Pcc_recuitC1 as algo1c1
 import ResolverAlgo as algo2
 import ToCsv
 import numpy as np
