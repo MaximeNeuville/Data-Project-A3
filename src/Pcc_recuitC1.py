@@ -3,8 +3,9 @@ import time
 import random
 import copy
 import math
+import numpy as np
 import matplotlib.pyplot as plt
-import ToCsv
+#import ToCsv
 
 travel = 12
 rest = 12
@@ -17,7 +18,8 @@ def path_travel_time(path, matrix):
     for i in range(0, len(path)):
         time = time + matrix[x][path[i]]
         x = path[i]
-
+    nb_city = np.size(matrix,1)
+    global nb_city
     return time
 
 
@@ -154,6 +156,7 @@ def simulated_annealing(matrix):
     # returns a list with, path, timing, execution time, and all 
     return [path, timing, time.clock() - clock, selected, total_len_history, d]
 
+'''
 if __name__ == '__main__':
 
     nb_city = input("Please enter the number of cities that you want : ")
@@ -167,3 +170,4 @@ if __name__ == '__main__':
 
     # 2 means 2opt algo 1 means SA
     # ToCsv.generateCSV(datas, 1)   
+'''

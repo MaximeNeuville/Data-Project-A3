@@ -4,7 +4,8 @@ import random
 import copy
 import math
 import matplotlib.pyplot as plt
-import ToCsv
+import numpy as np
+#import ToCsv
 
 # Calculates the travel time for a given path
 def path_travel_time(path, matrix):
@@ -13,7 +14,8 @@ def path_travel_time(path, matrix):
     for i in range(0, len(path)):
         time = time + matrix[x][path[i]]
         x = path[i]
-
+    nb_city = np.size(matrix,1)
+    global nb_city
     return time
 
 # Randomly swap 2 elements
@@ -94,7 +96,7 @@ def simulated_annealing(matrix):
     return [path, timing, time.clock() - clock, selected, total_len_history, d]
 
 
-      
+'''      
 if __name__ == '__main__':
 
     nb_city = input("Please enter the number of cities that you want : ")
@@ -106,3 +108,4 @@ if __name__ == '__main__':
     # 2 means 2opt algo 1 means SA
     ToCsv.generateCSV(datas, 1)   
 
+'''

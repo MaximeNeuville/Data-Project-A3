@@ -1,5 +1,5 @@
 import numpy as np
-import random 
+
 
 
 def random_symmetric_matrix(n):
@@ -17,4 +17,3 @@ def random_symmetric_matrix(n):
     print(cost_mat)
 
     return cost_mat
-
