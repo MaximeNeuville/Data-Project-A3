@@ -6,6 +6,14 @@ import pandas as pd
 
 start_time = time.time()
 #on recupere les matrices avec une grande difference de villes
+'''for i in range (10, 1010, 50):
+        start_time = time.time()
+        matrice[i] = Dsg.random_symmetric_matrix([i])
+        print(matrice[i])
+        # Affichage du temps de generation
+        generationTime = time.time() - start_time
+        print("Temps de generation pour 10 villes : %s secondes ---" % generationTime)
+'''
 matrice10 = Dsg.random_symmetric_matrix(10)
 # Affichage du temps de generation
 generationTime = time.time() - start_time
@@ -36,7 +44,9 @@ print("Temps de generation pour 10000 villes : %s secondes ---" % generationTime
 #on veut maintenant les envoyer dans le calcul du plus court chemin
 # Debut du decompte du temps
 start_time = time.time()
-Ra.two_opt(list(range(10)), matrice10)
+x=Ra.two_opt(list(range(10)), matrice10)
+print ('hereeeeeeeeeeeeeeeeeeeeee')
+print(x)
 # Affichage du temps d execution
 executionTime10 = time.time() - start_time
 print("Temps d'execution pour 10 villes : %s secondes ---" % executionTime10)
