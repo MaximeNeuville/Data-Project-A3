@@ -69,5 +69,5 @@ data = { 'number' : ["10", "100", "1000", "10000"],
         'time' : [executionTime10,executionTime100, executionTime1000, executionTime10000]}
 df = pd.DataFrame(data)
 print (df)
-df.to_csv("/Data-Project-A3/Datas/linearRegression.csv")
+df.to_csv("../Datas/linearRegression.csv")
 # Enfin on recupere les stats et on les envoie a la fonction de calcul de stat

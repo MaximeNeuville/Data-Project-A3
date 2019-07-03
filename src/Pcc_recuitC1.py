@@ -65,7 +65,7 @@ def total_time(path, matrix):
     return time
 
 
-
+'''
 if __name__ == '__main__':
 
     nb_city = input("Please enter the number of cities that you want : ")
@@ -79,3 +79,4 @@ if __name__ == '__main__':
 
     # 2 means 2opt algo 1 means SA
     # ToCsv.generateCSV(datas, 1)   
+'''

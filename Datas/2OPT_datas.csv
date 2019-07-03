@@ -1,1 +1,8 @@
-Nombre de ville,temps dexecution,nombre diterations,PCchemin
+Nombre de ville, temps d execution, Poids chemin
+
+
+20,13.2724968,120
+20,10.2724216,108
+50,20.2654828,205
+50,8.8414265,212
+4,12.9720373,27
