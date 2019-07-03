@@ -9,11 +9,11 @@ def saveMatrix(matrix):
     # print(type(matrixJSON))
     # print(mat)
 
-    json.dump(save, codecs.open('matrix.json', 'w', encoding='utf-8'), separators=(',', ':'), sort_keys=True, indent=4)
+    json.dump(save, codecs.open('../Datas/matrix.json', 'w', encoding='utf-8'), separators=(',', ':'), sort_keys=True, indent=4)
 
 
 def restoreMatrix():
-    obj_text = codecs.open('matrix.json', 'r', encoding='utf-8').read()
+    obj_text = codecs.open('../Datas/matrix.json', 'r', encoding='utf-8').read()
     b_new = json.loads(obj_text)
     a_new = np.array(b_new)
     # print("saved matrix is")
