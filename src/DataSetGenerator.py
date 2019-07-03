@@ -8,7 +8,7 @@ def random_symmetric_matrix(n):
 
     # On gere les exceptions
     if int(n) < 2: 
-        random_symmetric_matrix(input("Error, please enter at least 2 cities : "))
+        random_symmetric_matrix(int(input("Error, please enter at least 2 cities : ")))
         exit()
 
     cost_mat = np.random.randint(1, maxTime, size=(n, n))
