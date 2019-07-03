@@ -31,9 +31,9 @@ def total_time(path, matrix):
 
         # true when we reach a node
         reached_node = False
-        print('Starts at %d at the node %d' % (actual_time, x))
+        print('Starts at %d:00 at the node %d' % (actual_time, x))
         actual_time = (actual_time + time_between_node ) % 24
-        print('Should arrive at the node %d at %d if no rest' % (path[i], actual_time))
+        print('Should arrive to the node %d at %d:00 if no rest' % (path[i], actual_time))
         while not reached_node:
             if time_remaining_to_node <= time_remaining:
                 time_remaining = time_remaining - time_remaining_to_node
@@ -60,7 +60,7 @@ def total_time(path, matrix):
                 time_remaining = travel
         if 8 <= actual_time <= 20:
             # pass
-            print('\tArrives at %d, so he can deliver ' %actual_time)
+            print('\tArrives at %d:00, so he can deliver ' %actual_time)
         else:
             # print('\tNOT between 8 and 20, wait %d hour(s)' %actual_time)
             if 0 <= actual_time < 8:
@@ -89,5 +89,5 @@ if __name__ == '__main__':
 
     # print(total_time(datas[0], matrix))
     print("With 2 constraints : %d" %dataConstraint)
-    print("VS 1 constraints : %d" %dataConstraint1)
+    # print("VS 1 constraints : %d" %dataConstraint1)
     print("VS without constraints : %d" %datas[1])
