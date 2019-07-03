@@ -17,7 +17,7 @@ def total_time(path, matrix):
     stops = []
 
     # len - 1 ?
-    for i in range(0, len(path)):
+    for i in range(1, len(path)):
         # variable used to store the remaining time to wait before traveling again
         time_remaining_to_node = matrix[x][path[i]]
 
