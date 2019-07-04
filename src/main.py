@@ -40,8 +40,6 @@ if __name__ == '__main__':
             else:
                 break
         if condition == 'yes':
-            # call the function that generates a symmetric matrix
-            # matrix = dsg.random_symmetric_matrix(cityNumber)
             datas = algo1.simulated_annealing(matrix)
             print(algo1.total_time(datas[0], matrix))
             print(" VS without constraint : ")
@@ -50,8 +48,6 @@ if __name__ == '__main__':
             # ToCsv.generateCSV(datas, 1)
 
         elif condition == 'no':
-            # call the function that generates a symmetric matrix
-            # matrix = dsg.random_symmetric_matrix(cityNumber)
             datas = algo1.simulated_annealing(matrix)
             # 2 means 2opt algo 1 means SA
             ToCsv.generateCSV(datas, 1)
@@ -59,27 +55,21 @@ if __name__ == '__main__':
     elif algo == '2opt':
         init_route = list(range(cityNumber))
         # print(init_route)
-        # matrix = dsg.random_symmetric_matrix(cityNumber)
         mat = list(matrix)
         best_route = algo2.two_opt(init_route, mat)
         print(best_route)
-        # TODO define datas into 2opt algo
         # 2 means 2opt algo 1 means SA
         ToCsv.generateCSV(best_route, 2)
 
     elif algo == 'both':
-        # call the function that generates a symmetric matrix
-        # matrix = dsg.random_symmetric_matrix(cityNumber)
         datas = algo1.simulated_annealing(matrix)
         # 2 means 2opt algo 1 means SA
         ToCsv.generateCSV(datas, 1)
 
         init_route = list(range(cityNumber))
         # print(init_route)
-        # matrix = dsg.random_symmetric_matrix(cityNumber)
         mat = list(matrix)
         best_route = algo2.two_opt(init_route, mat)
         print(best_route)
-        # TODO define datas into 2opt algo
         # 2 means 2opt algo 1 means SA
         ToCsv.generateCSV(best_route, 2)

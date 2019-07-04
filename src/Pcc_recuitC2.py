@@ -76,7 +76,7 @@ def total_time(path, matrix):
     return time
 
 
-# TODO what's that ?
+'''
 if __name__ == '__main__':
 
     nb_city = input("Please enter the number of cities that you want : ")
@@ -91,3 +91,4 @@ if __name__ == '__main__':
     print("With 2 constraints : %d" % dataConstraint)
     # print("VS 1 constraints : %d" %dataConstraint1)
     print("VS without constraints : %d" % datas[1])
+'''

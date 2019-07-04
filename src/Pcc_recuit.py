@@ -14,9 +14,9 @@ def path_travel_time(path, matrix):
     for i in range(0, len(path)):
         time = time + matrix[x][path[i]]
         x = path[i]
-        print("here is the matrix")
-        print(matrix[x])
-        print([path[i]])
+        # print("here is the matrix")
+        # print(matrix[x])
+        # print([path[i]])
     return time
 
 
@@ -92,6 +92,8 @@ def simulated_annealing(matrix):
     print("Total time : %d" % timing)
     print("Best path : ")
     print(path)
+
+    # TODO comment only for the quickMetricsGeneration()
     '''
     plt.plot(total_len_history)
     plt.plot(selected)

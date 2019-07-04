@@ -15,5 +15,17 @@ def generateCSV(datas, algo_type):
             writer = csv.writer(f,  delimiter=',', quoting=csv.QUOTE_MINIMAL)
             writer.writerow([datas[0], datas[1], datas[2]])
             print("CSV generated and/or filled")
+    # it's a Simulated Annealing algo by quickMetricsGenerator()
+    elif algo_type == 3:
+        with open('../Datas/QMGSA_datas.csv', 'a') as f:
+            writer = csv.writer(f,  delimiter=',', quoting=csv.QUOTE_MINIMAL)
+            writer.writerow([len(datas[0])-1, datas[2], datas[1], datas[5]])
+            print("CSV generated and/or filled")
+    # it's a 2opt algo by quickMetricsGenerator()
+    elif algo_type == 4:
+        with open('../Datas/QMG2OPT_datas.csv', 'a') as f:
+            writer = csv.writer(f,  delimiter=',', quoting=csv.QUOTE_MINIMAL)
+            writer.writerow([datas[0], datas[1], datas[2]])
+            print("CSV generated and/or filled")
     else:
         print("Algo type missing")

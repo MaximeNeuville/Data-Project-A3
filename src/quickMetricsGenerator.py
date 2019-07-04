@@ -13,7 +13,7 @@ def metricsGenerator(city_number):
         # TODO to run comment the plotes of the algo (simulated annealing)
         datas = algo1.simulated_annealing(matrix)
         # 2 means 2opt algo 1 means SA
-        ToCsv.generateCSV(datas, 1)
+        ToCsv.generateCSV(datas, 3)
 
         init_route = list(range(city_number))
         # print(init_route)
@@ -22,7 +22,7 @@ def metricsGenerator(city_number):
         best_route = algo2.two_opt(init_route, mat)
         print(best_route)
         # 2 means 2opt algo 1 means SA
-        ToCsv.generateCSV(best_route, 2)
+        ToCsv.generateCSV(best_route, 4)
 
 
 def poolMetricsGenerator():
