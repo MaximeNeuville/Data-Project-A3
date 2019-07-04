@@ -1,12 +1,9 @@
 import DataSetGenerator as dsg
 import time
 import ResolverAlgo as Ra
-import numpy
-import pandas as pd
-
-for i in range (10, 1020, 50):
 
 
+for i in range(10, 1020, 50):
 
         start_time = time.time()
         i = dsg.random_symmetric_matrix(i)
@@ -25,13 +22,4 @@ for i in range (10, 1020, 50):
         Ra.two_opt(i[0], i)
         # Affichage du temps d execution
         executionTime = time.time() - start_timer
-        print("Temps d'execution pour"+ str(nb_city)+" villes : %s secondes ---" % executionTime)
-
-
-
-
-
-
-
-
-
+        print("Temps d'execution pour" + str(nb_city)+" villes : %s secondes ---" % executionTime)

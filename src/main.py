@@ -24,7 +24,7 @@ if __name__ == '__main__':
 
     # choosing algo
     print("Please chose which Algorithm to run")
-    #validating input
+    # validating input
     while True:
         algo = input("tape 'sa' for Simulated Annealing or '2opt' for 2-Opt algorithm or 'both' to compare ")
         if algo.lower() not in ('sa', '2opt', 'both'):
@@ -34,7 +34,7 @@ if __name__ == '__main__':
     if algo == 'sa':
         # validating input
         while True:
-            condition = input("Do you want the condition of driver working time to be applied ? (answer by 'yes' or 'no') ")
+            condition = input("Do you want the condition of driver working time to be applied ? ('yes' or 'no') ")
             if condition.lower() not in ('yes', 'no'):
                 print("Only 'yes' or 'no' are accepted.")
             else:

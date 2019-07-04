@@ -2,10 +2,11 @@ import numpy as np
 import json
 import codecs
 
+
 def saveMatrix(matrix):
-    matrixJSON = matrix
+    matrix_json = matrix
     # print(type(matrixJSON))
-    save = matrixJSON.tolist()
+    save = matrix_json.tolist()
     # print(type(matrixJSON))
     # print(mat)
 
@@ -19,4 +20,3 @@ def restoreMatrix():
     # print("saved matrix is")
     # print(a_new)
     return a_new
-

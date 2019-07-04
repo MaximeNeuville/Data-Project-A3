@@ -1,10 +1,10 @@
-import DataSetGenerator as dsg
-import time 
-import random
-import copy
-import math
-import matplotlib.pyplot as plt
-import Pcc_recuit as pcc
+# import DataSetGenerator as dsg
+# import time
+# import random
+# import copy
+# import math
+# import matplotlib.pyplot as plt
+# import Pcc_recuit as pcc
 
 travel = 12
 rest = 12
@@ -54,7 +54,7 @@ def total_time(path, matrix):
             else:
                 # has rested between two points
                 time_remaining_to_node = time_remaining_to_node - time_remaining
-                stops.append([x,path[i]])
+                stops.append([x, path[i]])
                 print("S'est arrete entre %d et %d" % (x, path[i]))
 
                 # rests 12 hours
