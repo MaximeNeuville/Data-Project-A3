@@ -100,6 +100,7 @@ def simulated_annealing(matrix):
     # returns a list with, path, timing, execution time, and all 
     return [path, timing, clock, selected, total_len_history, d]
 
+# IF main.py doesn't work just try here (dont forget to uncomment the import section)
 
 '''      
 if __name__ == '__main__':
