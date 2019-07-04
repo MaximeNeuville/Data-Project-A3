@@ -13,7 +13,8 @@ def cost_change(cost_mat, n1, n2, n3, n4):
 
 
 def two_opt(route, cost_mat):
-    clock = time.clock()
+
+    start_time = time.time()
     best = route
     improved = True
     while improved:
@@ -37,6 +38,7 @@ def two_opt(route, cost_mat):
         x = best[i]
 
     nb_city = len(cost_mat)
+    clock = time.time() - start_time
 
     return [nb_city, clock, route_wheight, best]
 
