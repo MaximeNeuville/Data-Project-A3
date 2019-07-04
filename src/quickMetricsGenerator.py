@@ -7,7 +7,7 @@ import ToCsv
 def metrics_generator(city_number):
 
     # generating map
-    for i in range(0, 9, 1):
+    for i in range(0, 49, 1):
         matrix = dsg.random_symmetric_matrix(city_number)
         # call the function that generates a symmetric matrix
         # TODO to run comment the plotes of the algo (simulated annealing)
@@ -28,13 +28,13 @@ def metrics_generator(city_number):
 def pool_metrics_generator():
 
     metrics_generator(5)
-    metrics_generator(10)
+    #metrics_generator(10)
     # metrics_generator(25)
-    metrics_generator(50)
+    # metrics_generator(50)
     # metrics_generator(75)
-    metrics_generator(100)
-    metrics_generator(500)
-    metrics_generator(1000)
+    # metrics_generator(100)
+    # metrics_generator(500)
+    # metrics_generator(1000)
     # metrics_generator(2500)
     # metrics_generator(5000)
 
