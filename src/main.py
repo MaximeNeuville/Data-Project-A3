@@ -4,7 +4,6 @@ import Pcc_recuitC1 as algo1c1
 import Pcc_recuitC2 as algo1c2
 import ResolverAlgo as algo2
 import ToCsv
-import MatrixInJSON as mjson
 
 
 if __name__ == '__main__':
@@ -24,14 +23,15 @@ if __name__ == '__main__':
     matrix = dsg.random_symmetric_matrix(cityNumber)
 
     # choosing algo
-    print("Please chose which Algorithm to run")
+    print("Please choose which Algorithm to run")
     # validating input
     while True:
-        algo = input("tape 'sa' for Simulated Annealing or '2opt' for 2-Opt algorithm or 'both' to compare ")
+        algo = input("tape 'sa' for Simulated Annealing or '2opt' for 2-Opt algorithm or 'both' to compare : ")
         if algo.lower() not in ('sa', '2opt', 'both'):
             print("Only 'sa', '2opt' and 'both' are accepted.")
         else:
             break
+       
     if algo == 'sa':
         # validating input
         while True:
