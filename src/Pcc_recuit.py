@@ -12,7 +12,10 @@ def path_travel_time(path, matrix):
 
     for i in range(0, len(path)):
         time = time + matrix[x][path[i]]
-        x = path[i]    
+        x = path[i]
+        print("here is the matrix")
+        print(matrix[x])
+        print ([path[i]])
     return time
 
 # Randomly swap 2 elements
@@ -29,7 +32,7 @@ def swap_value(path):
 
 # Shortest path (only one time each node)
 def simulated_annealing(matrix):
-    clock = time.clock()
+    start_time = time.time()
 
     # value too high = too many iterations (diversification)
     # for big matrice, raise the temp
@@ -86,12 +89,16 @@ def simulated_annealing(matrix):
     print("Total time : %d" % timing )
     print("Best path : ")
     print(path)
+    '''
     plt.plot(total_len_history)
     plt.plot(selected)
     plt.show()
+    '''
+
+    clock = time.time() - start_time
 
     # returns a list with, path, timing, execution time, and all 
-    return [path, timing, time.clock() - clock, selected, total_len_history, d]
+    return [path, timing, clock, selected, total_len_history, d]
 
 
 '''      
