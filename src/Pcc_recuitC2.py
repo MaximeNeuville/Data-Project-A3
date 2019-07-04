@@ -1,11 +1,5 @@
 import DataSetGenerator as dsg
-# import time
-# import random
-# import copy
-# import math
-# import matplotlib.pyplot as plt
 import Pcc_recuit as pcc
-# import time
 import Pcc_recuitC1 as pcc1
 
 travel = 12
@@ -75,7 +69,7 @@ def total_time(path, matrix):
         x = path[i]
     return time
 
-
+# IF main.py doesn't work just try here
 '''
 if __name__ == '__main__':
 

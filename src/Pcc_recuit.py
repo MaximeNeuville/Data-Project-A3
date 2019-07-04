@@ -1,10 +1,11 @@
 # import DataSetGenerator as dsg
+# import ToCsv
 import time 
 import random
 import copy
 import math
-# import matplotlib.pyplot as plt
-# import ToCsv
+import matplotlib.pyplot as plt
+
 
 
 # Calculates the travel time for a given path
@@ -14,9 +15,6 @@ def path_travel_time(path, matrix):
     for i in range(0, len(path)):
         time = time + matrix[x][path[i]]
         x = path[i]
-        # print("here is the matrix")
-        # print(matrix[x])
-        # print([path[i]])
     return time
 
 
@@ -87,21 +85,18 @@ def simulated_annealing(matrix):
         selected.append(timing)
         temp = temp * (1 - cooling_rate)
         d = d + 1
+   
+    clock = time.time() - start_time
 
-    print("Total iterations : %d" % d)
-    print("Total time : %d" % timing)
-    print("Best path : ")
-    print(path)
+    print("Simulated Annealing algorithm : ")
+    print("\tTotal time : %d hours" % timing)
+    print("\tExecution time : %d s" %clock)
+    print("\tTotal iterations : %d" % d)
+    print("\tBest path : %s" %path)
 
-    # TODO comment only for the quickMetricsGeneration()
-    '''
     plt.plot(total_len_history)
     plt.plot(selected)
     plt.show()
-    '''
-
-    clock = time.time() - start_time
-
     # returns a list with, path, timing, execution time, and all 
     return [path, timing, clock, selected, total_len_history, d]
 

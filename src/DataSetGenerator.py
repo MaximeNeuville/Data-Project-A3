@@ -4,7 +4,10 @@ import numpy as np
 def random_symmetric_matrix(n):
 
     max_time = 12
-
+    
+    # that way we are sure that it is the right type
+    n = int(n)
+    
     # we handle one exception
     if int(n) < 2: 
         random_symmetric_matrix(int(input("Error, please enter at least 2 cities : ")))
