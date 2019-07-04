@@ -1,37 +1,120 @@
-import numpy as np
+numpy as np
 import pandas as pd
+import scipy as sc
 import matplotlib.pyplot as plt
-from sklearn.linear_model import LinearRegression  # lib name : scikit-learn
+from scipy import stats
+from sklearn.linear_model import LinearRegression
+# lib name : scikit-learn
 
 # import LinearRegression.csv
 # importe LinearRegression.csv
-data = pd.read_csv('/Data-Project-A3/Datas/linearRegression.csv', index_col=0)
-data.head()
 
-# Create the object Linear regression
-# créer un objet reg lin
-modeleReg = LinearRegression()
 
-# Create y and X
-# créer y et X
-axes = data.columns.drop("time")
-y = data.time
-x = data[axes]
+def regression_2opt():
 
-modeleReg.fit(x, y)
+    data = pd.read_csv('../Datas/linearRegression2opt.csv', index_col=0)
+    data.head()
 
-print(modeleReg.intercept_)
-print(modeleReg.coef_)
+    # Create the object Linear regression
+    # créer un objet reg lin
+    modele_reg = LinearRegression()
 
-# Calculate R²
-# calcul du R²
-modeleReg.score(x, y)
+    # Create y and X
+    # créer y et X
+    axes = data.columns.drop("time")
+    y = data.time
+    x = data[axes]
 
-RMSE = np.sqrt(((y-modeleReg.predict(x))**2).sum()/len(y))
+    modele_reg.fit(x, y)
 
-plt.plot(y, modeleReg.predict(x), '.')
-plt.show()
+    print("intercept: ")
+    print(modele_reg.intercept_)
+    print("coef: ")
+    print(modele_reg.coef_)
 
-plt.plot(y, y-modeleReg.predict(x), '.')
-plt.show()
-# TODO add the y=aX+b formule and a prompt to predict
+    # Calculate R²
+    # calcul du R²
+    modele_reg.score(x, y)
+
+    RMSE = np.sqrt(((y - modele_reg.predict(x)) ** 2).sum() / len(y))
+    print("RMSE: ")
+    print(RMSE)
+    plt.plot(x,y)
+    plt.grid()
+    plt.title("Regression 2-opt Algorithm", fontsize=10)
+    plt.xlabel('Matrix size (cities)')
+    plt.ylabel('time (s)')
+    plt.show()
+
+    plt.plot(y, modele_reg.predict(x), '.')
+    plt.grid()
+    plt.title("Regression 2-opt Algorithm", fontsize=10)
+    plt.xlabel('Root mean square error')
+    plt.ylabel('time (s)')
+    plt.show()
+
+    # plt.plot(y, y-modele_reg.predict(x), '.')
+    # plt.show()
+
+
+def regression_sa():
+
+    data = pd.read_csv('../Datas/linearRegressionSA.csv', index_col=0)
+    data.head()
+    # xaxe = pd.read_csv(r'../Datas/linearRegressionSA.csv', usecols=[2], skiprows=1)
+    # yaxe = pd.read_csv(r'../Datas/linearRegressionSA.csv', usecols=[2], skiprows=1)
+    # xaxes = (list([xaxe]))
+    # yaxes = (list([yaxe]))
+    #
+    # lr = sc.stats.linregress(xaxes, yaxes)
+
+    # fit = np.polyfit(xaxes, yaxes, 1)
+    # print(fit)
+    #np.polyfit(np.x), y, 1)
+
+    # Create the object Linear regression
+    # créer un objet reg lin
+    modele_reg = LinearRegression()
+
+    # Create y and X
+    # créer y et X
+    axes = data.columns.drop("time")
+    y = data.time
+    x = data[axes]
+
+    modele_reg.fit(x, y)
+
+    print("intercept: ")
+    print(modele_reg.intercept_)
+    print("coef: ")
+    print(modele_reg.coef_)
+
+    # Calculate R²
+    # calcul du R² (coefficent de determination(coefficient de correlation²))
+    modele_reg.score(x, y)
+
+    #Root Mean Square Error
+    RMSE = np.sqrt(((y - modele_reg.predict(x)) ** 2).sum() / len(y))
+    print("RMSE: ")
+    print(RMSE)
+    plt.plot(x,y)
+    plt.grid()
+    plt.title("Linear Regression Simulated Annealing Algorithm", fontsize=10)
+    plt.xlabel('Matrix size (cities)')
+    plt.ylabel('time (s)')
+    plt.show()
+
+    plt.plot(y, modele_reg.predict(x), '.')
+    plt.grid()
+    plt.title("Linear Regression Simulated Annealing Algorithm", fontsize=10)
+    plt.xlabel('Root mean square error')
+    plt.ylabel('time (s)')
+    plt.show()
+
+
+    # plt.plot(y, y - modele_reg.predict(x), '.')
+    # plt.show()
+
+
+regression_sa()
+regression_2opt()
