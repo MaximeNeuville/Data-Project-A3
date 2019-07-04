@@ -4,7 +4,7 @@ import ResolverAlgo as algo2
 import ToCsv
 
 
-def metricsGenerator(city_number):
+def metrics_generator(city_number):
 
     # generating map
     for i in range(0, 10, 1):
@@ -25,18 +25,18 @@ def metricsGenerator(city_number):
         ToCsv.generateCSV(best_route, 4)
 
 
-def poolMetricsGenerator():
+def pool_metrics_generator():
 
-    metricsGenerator(5)
-    metricsGenerator(10)
-    # metricsGenerator(25)
-    metricsGenerator(50)
-    # metricsGenerator(75)
-    metricsGenerator(100)
-    metricsGenerator(500)
-    metricsGenerator(1000)
-    # metricsGenerator(2500)
-    # metricsGenerator(5000)
+    metrics_generator(5)
+    metrics_generator(10)
+    # metrics_generator(25)
+    metrics_generator(50)
+    # metrics_generator(75)
+    metrics_generator(100)
+    metrics_generator(500)
+    metrics_generator(1000)
+    # metrics_generator(2500)
+    # metrics_generator(5000)
 
 
-poolMetricsGenerator()
+pool_metrics_generator()

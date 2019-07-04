@@ -1,6 +1,7 @@
 import DataSetGenerator as dsg
 import Pcc_recuit as algo1
 import Pcc_recuitC1 as algo1c1
+import Pcc_recuitC2 as algo1c2
 import ResolverAlgo as algo2
 import ToCsv
 import MatrixInJSON as mjson
@@ -40,12 +41,30 @@ if __name__ == '__main__':
             else:
                 break
         if condition == 'yes':
-            datas = algo1.simulated_annealing(matrix)
-            print(algo1.total_time(datas[0], matrix))
-            print(" VS without constraint : ")
-            print(datas[1])
-            # 2 means 2opt algo 1 means SA
-            # ToCsv.generateCSV(datas, 1)
+            while True:
+                constraints = input("tape 'dwt' for driver working time condition or '2wt' for driver working time and opening time constraints ")
+                if constraints.lower() not in ('dwt', '2wt'):
+                    print("Only 'dwt' and '2wt' are accepted.")
+                else:
+                    break
+            if constraints == 'dwt':
+                datas = algo1.simulated_annealing(matrix)
+                print(algo1c1.total_time(datas[0], matrix))
+                print(" VS without constraint : ")
+                print(datas[1])
+                # 2 means 2opt algo 1 means SA
+                # ToCsv.generateCSV(datas, 1)
+            elif constraints == '2wt':
+                datas = algo1.simulated_annealing(matrix)
+                dataConstraint = algo1c2.total_time(datas[0], matrix)
+                dataConstraint1 = algo1.total_time(datas[0], matrix)
+                # print(total_time(datas[0], matrix))
+                print("With 2 constraints : %d" % dataConstraint)
+                # print("VS 1 constraints : %d" %dataConstraint1)
+                print("VS without constraints : %d" % datas[1])
+                print(algo1c2.total_time(datas[0], matrix))
+                # 2 means 2opt algo 1 means SA
+                # ToCsv.generateCSV(datas, 1)
 
         elif condition == 'no':
             datas = algo1.simulated_annealing(matrix)
