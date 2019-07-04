@@ -1,4 +1,4 @@
-numpy as np
+import numpy as np
 import pandas as pd
 import scipy as sc
 import matplotlib.pyplot as plt
@@ -12,7 +12,8 @@ from sklearn.linear_model import LinearRegression
 
 def regression_2opt():
 
-    data = pd.read_csv('../Datas/linearRegression2opt.csv', index_col=0)
+    #data = pd.read_csv('../Datas/linearRegression2opt.csv', index_col=0)
+    data = pd.read_csv('../Datas/QMG2OPT_datas.csv', index_col=0)
     data.head()
 
     # Create the object Linear regression
@@ -59,7 +60,8 @@ def regression_2opt():
 
 def regression_sa():
 
-    data = pd.read_csv('../Datas/linearRegressionSA.csv', index_col=0)
+    #data = pd.read_csv('../Datas/linearRegressionSA.csv', index_col=0)
+    data = pd.read_csv('../Datas/QMG2OPT_datas.csv', index_col=0)
     data.head()
     # xaxe = pd.read_csv(r'../Datas/linearRegressionSA.csv', usecols=[2], skiprows=1)
     # yaxe = pd.read_csv(r'../Datas/linearRegressionSA.csv', usecols=[2], skiprows=1)

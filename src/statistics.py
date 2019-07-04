@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import statistics as sta
+import matplotlib.pyplot as plt
 
 results_2opt = pd.read_csv("../Datas/QMGSA_datas.csv", sep=",", skiprows= 1, usecols=[1, 2])
 
@@ -60,3 +61,48 @@ m5002optmean = m5002opt.mean(skipna = True)
 
 
 print(m50samean)
+
+
+
+def graph_2opt():
+
+
+    data = pd.read_csv('../Datas/QMG2OPT_datas.csv',usecols=[1, 2])
+    data.head()
+
+    axes = data.columns.drop("time")
+    y = data.time
+    x = data[axes]
+
+    plt.plot(x, y)
+    plt.grid()
+    plt.title("Evolution du temps de traitement en fonction du nombre de villes (2-opt)", fontsize=10)
+    plt.xlabel('villes')
+    plt.ylabel('temps (s)')
+    plt.show()
+
+
+
+def graph_sa():
+
+
+    data = pd.read_csv('../Datas/QMGSA_datas.csv',usecols=[1, 2])
+    data.head()
+
+    # Create y and X
+    # créer y et X
+    axes = data.columns.drop("time")
+    y = data.time
+    x = data[axes]
+
+
+    plt.plot(x, y)
+    plt.grid()
+    plt.title("Evolution du temps de traitement en fonction du nombre de villes (Recuit simulé)", fontsize=10)
+    plt.xlabel('villes')
+    plt.ylabel('temps (s)')
+    plt.show()
+
+
+graph_sa()
+graph_2opt()
