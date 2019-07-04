@@ -1,4 +1,4 @@
-numpy as np
+import numpy as np
 import pandas as pd
 import scipy as sc
 import matplotlib.pyplot as plt
