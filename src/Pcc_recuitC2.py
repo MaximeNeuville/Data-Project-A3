@@ -1,11 +1,11 @@
 import DataSetGenerator as dsg
-import time 
-import random
-import copy
-import math
-import matplotlib.pyplot as plt
+# import time
+# import random
+# import copy
+# import math
+# import matplotlib.pyplot as plt
 import Pcc_recuit as pcc
-import time
+# import time
 import Pcc_recuitC1 as pcc1
 
 travel = 12
@@ -32,7 +32,7 @@ def total_time(path, matrix):
         # true when we reach a node
         reached_node = False
         print('Starts at %d:00 at the node %d' % (actual_time, x))
-        actual_time = (actual_time + time_between_node ) % 24
+        actual_time = (actual_time + time_between_node) % 24
         print('Should arrive to the node %d at %d:00 if no rest' % (path[i], actual_time))
         while not reached_node:
             if time_remaining_to_node <= time_remaining:
@@ -42,7 +42,7 @@ def total_time(path, matrix):
                     print("\tRests at the node : %d" % path[i])
                     time_remaining = travel
                     time = time + rest
-                    actual_time = (actual_time + rest) %24  
+                    actual_time = (actual_time + rest) % 24
                     print('\tRests %d hours' % rest)
                 time = time + time_between_node
                 # actual_time = actual_time + 
@@ -51,16 +51,16 @@ def total_time(path, matrix):
             else:
                 # has rested between two points
                 time_remaining_to_node = time_remaining_to_node - time_remaining
-                stops.append([x,path[i]])
+                stops.append([x, path[i]])
                 print("\tRests between %d and %d for %d hours" % (x, path[i], rest))
 
                 # rests 12 hours
                 time = time + rest
-                actual_time = (actual_time + rest) %24
+                actual_time = (actual_time + rest) % 24
                 time_remaining = travel
         if 8 <= actual_time <= 20:
             # pass
-            print('\tArrives at %d:00, so he can deliver ' %actual_time)
+            print('\tArrives at %d:00, so he can deliver ' % actual_time)
         else:
             # print('\tNOT between 8 and 20, wait %d hour(s)' %actual_time)
             if 0 <= actual_time < 8:
@@ -76,7 +76,7 @@ def total_time(path, matrix):
     return time
 
 
-
+# TODO what's that ?
 if __name__ == '__main__':
 
     nb_city = input("Please enter the number of cities that you want : ")
@@ -88,6 +88,6 @@ if __name__ == '__main__':
     dataConstraint1 = pcc1.total_time(datas[0], matrix)
 
     # print(total_time(datas[0], matrix))
-    print("With 2 constraints : %d" %dataConstraint)
+    print("With 2 constraints : %d" % dataConstraint)
     # print("VS 1 constraints : %d" %dataConstraint1)
-    print("VS without constraints : %d" %datas[1])
+    print("VS without constraints : %d" % datas[1])

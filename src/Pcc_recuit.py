@@ -1,22 +1,24 @@
-import DataSetGenerator as dsg
+# import DataSetGenerator as dsg
 import time 
 import random
 import copy
 import math
-import matplotlib.pyplot as plt
-#import ToCsv
+# import matplotlib.pyplot as plt
+# import ToCsv
+
 
 # Calculates the travel time for a given path
 def path_travel_time(path, matrix):
-    time = x = 0
 
+    time = x = 0
     for i in range(0, len(path)):
         time = time + matrix[x][path[i]]
         x = path[i]
         print("here is the matrix")
         print(matrix[x])
-        print ([path[i]])
+        print([path[i]])
     return time
+
 
 # Randomly swap 2 elements
 def swap_value(path):
@@ -29,6 +31,7 @@ def swap_value(path):
     path[v0] = temp
 
     return path
+
 
 # Shortest path (only one time each node)
 def simulated_annealing(matrix):
@@ -85,8 +88,8 @@ def simulated_annealing(matrix):
         temp = temp * (1 - cooling_rate)
         d = d + 1
 
-    print("Total iterations : %d" % d )
-    print("Total time : %d" % timing )
+    print("Total iterations : %d" % d)
+    print("Total time : %d" % timing)
     print("Best path : ")
     print(path)
     '''
@@ -112,5 +115,4 @@ if __name__ == '__main__':
 
     # 2 means 2opt algo 1 means SA
     ToCsv.generateCSV(datas, 1)   
-
 '''

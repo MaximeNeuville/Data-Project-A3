@@ -1,5 +1,5 @@
-import numpy as np
-import DataSetGenerator as Dsg
+# import numpy as np
+# import DataSetGenerator as Dsg
 import time
 
 '''
@@ -21,7 +21,8 @@ def two_opt(route, cost_mat):
         improved = False
         for i in range(1, len(route) - 2):
             for j in range(i + 1, len(route)):
-                if j - i == 1: continue
+                if j - i == 1:
+                    continue
                 '''
                 tests if the new combination of the new root can be improved
                 '''
@@ -30,7 +31,7 @@ def two_opt(route, cost_mat):
                     improved = True
         route = best
 
-    #calculate wheight of best route
+    # calculate wheight of best route
     route_wheight = x = 0
 
     for i in range(0, len(best)):
@@ -41,9 +42,6 @@ def two_opt(route, cost_mat):
     clock = time.time() - start_time
 
     return [nb_city, clock, route_wheight, best]
-
-
-
 
 
 '''
